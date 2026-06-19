@@ -7,28 +7,41 @@
 активности и цели (похудение / поддержание / набор массы). Дополнительно
 показывает рекомендуемое распределение БЖУ.
 
-### Запуск
+Интерфейс построен на **React + Vite + TypeScript** и компонентах
+[**shadcn/ui**](https://ui.shadcn.com) (Tailwind CSS + Radix UI).
 
-Откройте `index.html` в браузере — сборка не требуется.
+### Установка
 
 ```bash
-# либо локальный сервер
-python3 -m http.server 8000
-# затем http://localhost:8000
+npm install
+```
+
+### Запуск (режим разработки)
+
+```bash
+npm run dev
+# http://localhost:5173
+```
+
+### Сборка и предпросмотр
+
+```bash
+npm run build
+npm run preview
 ```
 
 ### Тесты
 
-Логика расчёта вынесена в `calculator.js` и покрыта тестами:
+Логика расчёта вынесена в `src/lib/calculator.ts` и покрыта тестами (Vitest):
 
 ```bash
-node calculator.test.js
+npm test
 ```
 
 ### Структура
 
-- `index.html` — разметка формы и результата
-- `styles.css` — оформление
-- `calculator.js` — чистые функции расчёта (BMR, калории, БЖУ)
-- `app.js` — связывание формы с логикой
-- `calculator.test.js` — тесты логики
+- `src/App.tsx` — экран калькулятора на компонентах shadcn/ui
+- `src/lib/calculator.ts` — чистые функции расчёта (BMR, калории, БЖУ)
+- `src/lib/calculator.test.ts` — тесты логики
+- `src/components/ui/*` — компоненты shadcn/ui (button, input, label, select, card, radio-group)
+- `components.json` — конфигурация shadcn/ui
